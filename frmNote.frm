@@ -5,10 +5,10 @@ Begin VB.Form frmNote
    BackColor       =   &H00C0FFFF&
    BorderStyle     =   0  'None
    Caption         =   "WeNote"
-   ClientHeight    =   3615
+   ClientHeight    =   7350
    ClientLeft      =   2130
    ClientTop       =   1785
-   ClientWidth     =   4425
+   ClientWidth     =   13800
    ControlBox      =   0   'False
    FillColor       =   &H00C0E0FF&
    ForeColor       =   &H00C0E0FF&
@@ -16,11 +16,26 @@ Begin VB.Form frmNote
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3615
-   ScaleWidth      =   4425
+   ScaleHeight     =   7350
+   ScaleWidth      =   13800
    ShowInTaskbar   =   0   'False
+   Begin VB.PictureBox guoqi 
+      BackColor       =   &H80000005&
+      Height          =   320
+      Left            =   360
+      ScaleHeight     =   255
+      ScaleWidth      =   2955
+      TabIndex        =   26
+      Top             =   0
+      Width           =   3015
+   End
    Begin VB.Timer Timer1 
       Enabled         =   0   'False
+      Interval        =   1000
+      Left            =   8400
+      Top             =   1920
+   End
+   Begin VB.Timer Timer2 
       Interval        =   1000
       Left            =   8400
       Top             =   1920
@@ -482,11 +497,11 @@ Begin VB.Form frmNote
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1935
+         Height          =   1575
          Left            =   240
          MultiLine       =   -1  'True
          TabIndex        =   3
-         Top             =   240
+         Top             =   600
          Width           =   2775
       End
    End
@@ -713,7 +728,6 @@ Private Sub Form_Load()
         HScroll1.Value = 90
         w.Transparent HScroll1.Value
     End If
-    
     isHasBeenLoaded = True
 End Sub
 Private Sub Form_DblClick()
@@ -758,14 +772,14 @@ Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y A
 End Sub
 '收到窗体大小影响而改变的控件
 Private Sub setControls()
-On Error GoTo err1
+On Error GoTo Err1
 '    picMain.Move 135, 360, Me.Width - 280, Me.Height - 530
     picMain.Move 75, 360, Me.Width - 150, Me.Height - 455
     txtContent.Move 0, 0, picMain.Width, picMain.Height
     lblClose.Move Me.ScaleWidth - lblClose.Width - 135, 0
     
     If picSet.Visible Then picSet.Move (Me.ScaleWidth - picSet.Width) \ 2, (Me.ScaleHeight - picSet.Height) \ 2 '如果设置还显示着，那么也要相应的调整大小
-err1:
+Err1:
 End Sub
 Private Sub Check3_Click()
     If Not isHasBeenLoaded Then Exit Sub '窗体未载入初始化好暂时不做这些动作
@@ -1078,6 +1092,10 @@ Private Sub Timer1_Timer()
         End If
     End If
 End Sub
+Private Sub Timer2_Timer()
+    guoqi.Tag = "过期时间：" & Now - 30
+    printGuoqi guoqi.Tag
+End Sub
 '将秒数转换成年月日等时间
 Private Function transSecondsToAll(ByVal dblSeconds As Double) As String
     Dim s$, i%, strTime$, dblCountCurrent As Double
@@ -1106,4 +1124,8 @@ End Sub
 Private Sub printDaojishi(ByVal strMsg As String)
     lblShengyu.Cls
     lblShengyu.Print strMsg
+End Sub
+Private Sub printGuoqi(ByVal strMsg As String)
+    guoqi.Cls
+    guoqi.Print strMsg
 End Sub
