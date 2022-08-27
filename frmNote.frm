@@ -5,10 +5,10 @@ Begin VB.Form frmNote
    BackColor       =   &H00C0FFFF&
    BorderStyle     =   0  'None
    Caption         =   "WeNote"
-   ClientHeight    =   3615
+   ClientHeight    =   7350
    ClientLeft      =   2130
    ClientTop       =   1785
-   ClientWidth     =   4425
+   ClientWidth     =   13800
    ControlBox      =   0   'False
    FillColor       =   &H00C0E0FF&
    ForeColor       =   &H00C0E0FF&
@@ -16,11 +16,26 @@ Begin VB.Form frmNote
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3615
-   ScaleWidth      =   4425
+   ScaleHeight     =   7350
+   ScaleWidth      =   13800
    ShowInTaskbar   =   0   'False
+   Begin VB.PictureBox guoqi 
+      BackColor       =   &H80000005&
+      Height          =   320
+      Left            =   360
+      ScaleHeight     =   255
+      ScaleWidth      =   2955
+      TabIndex        =   26
+      Top             =   0
+      Width           =   3015
+   End
    Begin VB.Timer Timer1 
       Enabled         =   0   'False
+      Interval        =   1000
+      Left            =   8400
+      Top             =   1920
+   End
+   Begin VB.Timer Timer2 
       Interval        =   1000
       Left            =   8400
       Top             =   1920
@@ -44,7 +59,7 @@ Begin VB.Form frmNote
          BackColor       =   &H00FFFFFF&
          BorderStyle     =   0  'None
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   7.5
             Charset         =   134
             Weight          =   400
@@ -79,7 +94,7 @@ Begin VB.Form frmNote
       Begin VB.ComboBox Combo2 
          Enabled         =   0   'False
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -99,7 +114,7 @@ Begin VB.Form frmNote
       Begin VB.ComboBox Combo1 
          Enabled         =   0   'False
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -130,9 +145,9 @@ Begin VB.Form frmNote
       Begin VB.CheckBox Check1 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
-         Caption         =   "±£³Öµ±Ç°±ãÇ©×ÜÔÚ×îÇ°"
+         Caption         =   "ä¿æŒå½“å‰ä¾¿ç­¾æ€»åœ¨æœ€å‰"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -151,7 +166,7 @@ Begin VB.Form frmNote
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -232,9 +247,9 @@ Begin VB.Form frmNote
       Begin VB.Label lblMore 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "¸ü¶à"
+         Caption         =   "æ›´å¤š"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   7.5
             Charset         =   134
             Weight          =   400
@@ -329,9 +344,9 @@ Begin VB.Form frmNote
       Begin VB.Label Label2 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "ÑÕÉ«"
+         Caption         =   "é¢œè‰²"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -349,9 +364,9 @@ Begin VB.Form frmNote
       Begin VB.Label lblShengyuxx 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Ê£Óà"
+         Caption         =   "å‰©ä½™"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   7.5
             Charset         =   134
             Weight          =   400
@@ -378,9 +393,9 @@ Begin VB.Form frmNote
       Begin VB.Label lblTouming 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Í¸Ã÷¶È"
+         Caption         =   "é€æ˜åº¦"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -400,9 +415,9 @@ Begin VB.Form frmNote
          AutoSize        =   -1  'True
          BackColor       =   &H00C00000&
          BackStyle       =   0  'Transparent
-         Caption         =   "¡Á"
+         Caption         =   "Ã—"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -414,16 +429,16 @@ Begin VB.Form frmNote
          Height          =   330
          Left            =   2520
          TabIndex        =   11
-         ToolTipText     =   "¹Ø±Õ"
+         ToolTipText     =   "å…³é—­"
          Top             =   0
          Width           =   195
       End
       Begin VB.Label lblTopTitle 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Éè ÖÃ"
+         Caption         =   "è®¾ ç½®"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   10.5
             Charset         =   134
             Weight          =   700
@@ -441,9 +456,9 @@ Begin VB.Form frmNote
       Begin VB.Label lblRem 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "ºóÌáĞÑÎÒ"
+         Caption         =   "åæé†’æˆ‘"
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   9
             Charset         =   134
             Weight          =   400
@@ -474,7 +489,7 @@ Begin VB.Form frmNote
          Appearance      =   0  'Flat
          BorderStyle     =   0  'None
          BeginProperty Font 
-            Name            =   "Î¢ÈíÑÅºÚ"
+            Name            =   "å¾®è½¯é›…é»‘"
             Size            =   12
             Charset         =   134
             Weight          =   400
@@ -482,11 +497,11 @@ Begin VB.Form frmNote
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1935
+         Height          =   1575
          Left            =   240
          MultiLine       =   -1  'True
          TabIndex        =   3
-         Top             =   240
+         Top             =   600
          Width           =   2775
       End
    End
@@ -514,7 +529,7 @@ Begin VB.Form frmNote
       BackStyle       =   0  'Transparent
       Caption         =   "+"
       BeginProperty Font 
-         Name            =   "Î¢ÈíÑÅºÚ"
+         Name            =   "å¾®è½¯é›…é»‘"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -527,7 +542,7 @@ Begin VB.Form frmNote
       Left            =   120
       TabIndex        =   2
       Tag             =   "Mini music"
-      ToolTipText     =   "ĞÂ½¨Ò»¸ö±ãÇ©"
+      ToolTipText     =   "æ–°å»ºä¸€ä¸ªä¾¿ç­¾"
       Top             =   0
       Width           =   180
    End
@@ -535,9 +550,9 @@ Begin VB.Form frmNote
       Alignment       =   2  'Center
       AutoSize        =   -1  'True
       BackColor       =   &H00C0E0FF&
-      Caption         =   "¡Á"
+      Caption         =   "Ã—"
       BeginProperty Font 
-         Name            =   "Î¢ÈíÑÅºÚ"
+         Name            =   "å¾®è½¯é›…é»‘"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -549,7 +564,7 @@ Begin VB.Form frmNote
       Height          =   330
       Left            =   3240
       TabIndex        =   1
-      ToolTipText     =   "É¾³ı±ãÇ©"
+      ToolTipText     =   "åˆ é™¤ä¾¿ç­¾"
       Top             =   0
       Width           =   195
    End
@@ -560,17 +575,17 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 '==============================================================================================
-'Ãû    ³Æ£ºÎ¢±ãÇ©£¬WeNote
-'Ãè    Êö£ºÎ¢±ãÇ©ÊÇÒ»¿îwindows²Ù×÷ÏµÍ³ÏÂµÄ±ãÇ©Èí¼ş£¬ÍêÈ«¿ÉÒÔÌæ´úÏµÍ³×Ô´øµÄ±ã¼ã£¬Ã¿¸ö
-'          ±ãÇ©¿Éµ¥¶ÀÉèÖÃÌáĞÑ£¬¿ÉÉèÖÃ°ëÍ¸Ã÷¡£±ãÇ©Æ½³£¶¼ÊÇÔÚÏµÍ³ÓÒÏÂ½ÇÍĞÅÌÇø£¬²»Õ¼ÓÃ
-'          ÈÎÎñÀ¸¡£Ê¹ÓÃÆğÀ´·Ç³£·½±ã¡£¾ßÌåÊ¹ÓÃ·½·¨¿ÉÓÒ»÷ÏµÍ³ÍĞÅÌ²Ëµ¥²é¿´°ïÖú¡£
-'±à    ³Ì£ºsysdzw Ô­´´¿ª·¢£¬ÈçÄú¶Ô±¾Èí¼ş½øĞĞ¸Ä½ø»òÍØÕ¹Çë·¢ÎÒÒ»·İ
-'·¢²¼ÈÕÆÚ£º2020-03-02
-'²©    ¿Í£ºhttps://blog.csdn.net/sysdzw
-'Email   £ºsysdzw@163.com
-'QQ      £º171977759
-'°æ    ±¾£ºV1.0 ³õ°æ                                                           2020-02-20
-'          V1.1 ½â¾öÁËµ¹¼ÆÊ±¸üĞÂÊ±»áÉÁ¶¯µÄĞ¡ÎÊÌâ                                2020-03-15
+'å    ç§°ï¼šå¾®ä¾¿ç­¾ï¼ŒWeNote
+'æ    è¿°ï¼šå¾®ä¾¿ç­¾æ˜¯ä¸€æ¬¾windowsæ“ä½œç³»ç»Ÿä¸‹çš„ä¾¿ç­¾è½¯ä»¶ï¼Œå®Œå…¨å¯ä»¥æ›¿ä»£ç³»ç»Ÿè‡ªå¸¦çš„ä¾¿ç¬ºï¼Œæ¯ä¸ª
+'          ä¾¿ç­¾å¯å•ç‹¬è®¾ç½®æé†’ï¼Œå¯è®¾ç½®åŠé€æ˜ã€‚ä¾¿ç­¾å¹³å¸¸éƒ½æ˜¯åœ¨ç³»ç»Ÿå³ä¸‹è§’æ‰˜ç›˜åŒºï¼Œä¸å ç”¨
+'          ä»»åŠ¡æ ã€‚ä½¿ç”¨èµ·æ¥éå¸¸æ–¹ä¾¿ã€‚å…·ä½“ä½¿ç”¨æ–¹æ³•å¯å³å‡»ç³»ç»Ÿæ‰˜ç›˜èœå•æŸ¥çœ‹å¸®åŠ©ã€‚
+'ç¼–    ç¨‹ï¼šsysdzw åŸåˆ›å¼€å‘ï¼Œå¦‚æ‚¨å¯¹æœ¬è½¯ä»¶è¿›è¡Œæ”¹è¿›æˆ–æ‹“å±•è¯·å‘æˆ‘ä¸€ä»½
+'å‘å¸ƒæ—¥æœŸï¼š2020-03-02
+'åš    å®¢ï¼šhttps://blog.csdn.net/sysdzw
+'Email   ï¼šsysdzw@163.com
+'QQ      ï¼š171977759
+'ç‰ˆ    æœ¬ï¼šV1.0 åˆç‰ˆ                                                           2020-02-20
+'          V1.1 è§£å†³äº†å€’è®¡æ—¶æ›´æ–°æ—¶ä¼šé—ªåŠ¨çš„å°é—®é¢˜                                2020-03-15
 '==============================================================================================
 Option Explicit
 
@@ -585,24 +600,24 @@ Dim isMovingRightDown As Boolean, x1RightDown As Integer, y1RightDown As Integer
 Dim isMovingLeftDown As Boolean, x1LeftDown As Integer, y1LeftDown As Integer
 Dim orgWidth&, orgHeight&
 
-'ÌáĞÑÓÃ
+'æé†’ç”¨
 Dim isRemind As Boolean
 Dim dateRemindStart As Date
 Dim dblNumber As Double
 Dim strDanwei As String
 Dim dateRemindEnd As Date
-Dim intDanweiIndex As Integer 'Ê±¼äµ¥Î»½á¹¹Í¼Êı×éµÄË÷Òı
-Dim dblAllSeconds As Double 'ËùĞèÒªµÄ×ÜÃëÊı
+Dim intDanweiIndex As Integer 'æ—¶é—´å•ä½ç»“æ„å›¾æ•°ç»„çš„ç´¢å¼•
+Dim dblAllSeconds As Double 'æ‰€éœ€è¦çš„æ€»ç§’æ•°
 Dim strNoteCreateDate As String
 Dim strInteval As String
 Dim isShowEndTime As Boolean
 
 Dim isHasBeenLoaded As Boolean
-Dim isNeedRestoreFormSize As Boolean 'Èç¹ûÉèÖÃ´°¿Ú¸Ä±äÁË´°¿Ú´óĞ¡ÄÇÃ´ĞèÒªµ÷Õû´°¿Ú´óĞ¡
+Dim isNeedRestoreFormSize As Boolean 'å¦‚æœè®¾ç½®çª—å£æ”¹å˜äº†çª—å£å¤§å°é‚£ä¹ˆéœ€è¦è°ƒæ•´çª—å£å¤§å°
 
 Private Sub Form_Load()
     
-    If isNeedSetToDesktop Then SetParent Me.hWnd, lngHwndDesktop '¸ù¾İĞèÒªÉèÖÃÊÇ·ñÇ¶Èë×ÀÃæ
+    If isNeedSetToDesktop Then SetParent Me.hWnd, lngHwndDesktop 'æ ¹æ®éœ€è¦è®¾ç½®æ˜¯å¦åµŒå…¥æ¡Œé¢
     
     lblAdd.Move 135, 0
     lblClose.BackStyle = 0
@@ -615,46 +630,46 @@ Private Sub Form_Load()
     Combo1.Text = "25"
     setComboHeight Combo1, 300
     
-    vItem = Split("Ãë,·ÖÖÓ,Ğ¡Ê±,Ìì,ÔÂ,Äê", ",")
+    vItem = Split("ç§’,åˆ†é’Ÿ,å°æ—¶,å¤©,æœˆ,å¹´", ",")
     For i = 0 To UBound(vItem)
         Combo2.AddItem vItem(i)
     Next
-    Combo2.Text = "·ÖÖÓ"
+    Combo2.Text = "åˆ†é’Ÿ"
     
     Dim w As New clsWindow
     w.hWnd = Me.hWnd
     
     picMain.BackColor = vbWhite
     
-    '1   1500    300 5000    3000    aa  100 343252  ÊÇ  ÊÇ  5   ·ÖÖÓ    2020-2-20 11:30:11  2020-2-20 11:30:11
-    If strInitData <> "" Then  'ËµÃ÷ÊÇĞèÒª³õÊ¼»¯µÄ
+    '1   1500    300 5000    3000    aa  100 343252  æ˜¯  æ˜¯  5   åˆ†é’Ÿ    2020-2-20 11:30:11  2020-2-20 11:30:11
+    If strInitData <> "" Then  'è¯´æ˜æ˜¯éœ€è¦åˆå§‹åŒ–çš„
         Me.Tag = strInitData
         strInitData = ""
         Dim v
         v = Split(Me.Tag, vbTab)
-        lblClose.Tag = v(0)  'idÖµ±£´æÔÚ¹Ø±Õ°´Å¥µÄtagÊôĞÔÀï
+        lblClose.Tag = v(0)  'idå€¼ä¿å­˜åœ¨å…³é—­æŒ‰é’®çš„tagå±æ€§é‡Œ
         txtContent.Text = Replace(v(5), "vbcrlf", vbCrLf)
         
-        If Screen.Width - Val(v(1)) < 15 Then v(1) = Screen.Width - v(3) - 150 '×ó×ø±êÖÁÉÙÁô³ö1ÏñËØ£¬Èç¹ûÊÇ0»òÕßÊÇ¸ºÊı£¬ÄÇÃ´±íÊ¾²»¿É¼û£¬ÕâÖÖÇé¿ö¿ÉÄÜÊÇ´óÆÁµ½Ğ¡ÆÁÉÏÁË£¬ÀıÈç1920µ½1440µçÄÔÉÏÈ¥ÁË¡£
-        If Screen.Height - Val(v(2)) < 600 Then v(2) = Screen.Height - v(4) - 600 'ÉÏ×ø±êÖÁÉÙÁô³ö45ÏñËØ£¬ÒòÎªÈÎÎñÀ¸ÆÕÍ¨28ÏñËØ£¬´óÍ¼±ê44ÏñËØ
+        If Screen.Width - Val(v(1)) < 15 Then v(1) = Screen.Width - v(3) - 150 'å·¦åæ ‡è‡³å°‘ç•™å‡º1åƒç´ ï¼Œå¦‚æœæ˜¯0æˆ–è€…æ˜¯è´Ÿæ•°ï¼Œé‚£ä¹ˆè¡¨ç¤ºä¸å¯è§ï¼Œè¿™ç§æƒ…å†µå¯èƒ½æ˜¯å¤§å±åˆ°å°å±ä¸Šäº†ï¼Œä¾‹å¦‚1920åˆ°1440ç”µè„‘ä¸Šå»äº†ã€‚
+        If Screen.Height - Val(v(2)) < 600 Then v(2) = Screen.Height - v(4) - 600 'ä¸Šåæ ‡è‡³å°‘ç•™å‡º45åƒç´ ï¼Œå› ä¸ºä»»åŠ¡æ æ™®é€š28åƒç´ ï¼Œå¤§å›¾æ ‡44åƒç´ 
         Me.Move v(1), v(2), v(3), v(4)
         lngLeftLatest = Me.Left
         lngTopLatest = Me.Top
         Call setControls(v(3), v(4))
         imgRightDown.Move Me.ScaleWidth - imgRightDown.Width, Me.ScaleHeight - imgRightDown.Height
         imgLeftDown.Move 0, Me.ScaleHeight - imgRightDown.Height
-        Me.BackColor = v(7) 'ÏÈÉèÖÃÑÕÉ«
+        Me.BackColor = v(7) 'å…ˆè®¾ç½®é¢œè‰²
         
-        w.MakeTransparent 0 '·ÀÖ¹ÉÁ¶¯
+        w.MakeTransparent 0 'é˜²æ­¢é—ªåŠ¨
         Me.Show
         
         w.FadeIn 50
-        If v(6) <> 100 Then 'Èç¹ûÖ¸¶¨Í¸Ã÷¶ÈÁËµÄÄÇÃ´»¹ÒªÉèÖÃÏÂ
+        If v(6) <> 100 Then 'å¦‚æœæŒ‡å®šé€æ˜åº¦äº†çš„é‚£ä¹ˆè¿˜è¦è®¾ç½®ä¸‹
             w.Transparent v(6)
             HScroll1.Value = v(6)
         End If
         
-        If v(8) = "ÊÇ" Then
+        If v(8) = "æ˜¯" Then
             w.SetTop
             Check1.Value = 1
         End If
@@ -663,36 +678,36 @@ Private Sub Form_Load()
         strDanwei = v(11)
         Combo1.Text = dblNumber
         Combo2.Text = strDanwei
-        If v(9) = "ÊÇ" Then '±íÊ¾ÒªÌáĞÑ
+        If v(9) = "æ˜¯" Then 'è¡¨ç¤ºè¦æé†’
             isRemind = True
             Check3.Value = IIf(isRemind, 1, 0)
             dateRemindStart = v(12)
             
-            intDanweiIndex = getDanweiIndex(strDanwei)    'µÃµ½µ±Ç°Ê±¼äµ¥Î»Ë÷Òı
-            If intDanweiIndex = 5 And Val(dblNumber) > 60 Then  '´óÓÚ60ÄêµÄÓÃº¯Êı¼ÆËã
+            intDanweiIndex = getDanweiIndex(strDanwei)    'å¾—åˆ°å½“å‰æ—¶é—´å•ä½ç´¢å¼•
+            If intDanweiIndex = 5 And Val(dblNumber) > 60 Then  'å¤§äº60å¹´çš„ç”¨å‡½æ•°è®¡ç®—
                 dateRemindEnd = DateAdd(tDanwei(intDanweiIndex).strTag, dblNumber, dateRemindStart)
                 dblAllSeconds = DateDiff("s", dateRemindStart, dateRemindEnd)
             Else
-                dblAllSeconds = Val(dblNumber) * tDanwei(intDanweiIndex).lngSeconds 'Èç¹ûµ¥Î»ÊÇÌìÒÔÉÏ£¬ÄÇÃ´ÕâÀïµÄÊı²»ÊÇÌØ±ğ×¼È·£¬ÒòÎªÔÂ·İÊÇ¸ù¾İ30Ìì¼ÆËã
-                dateRemindEnd = DateAdd("s", dblAllSeconds, dateRemindStart)   'µÃµ½×¼È·µÄ½áÊøÊ±¼ä
+                dblAllSeconds = Val(dblNumber) * tDanwei(intDanweiIndex).lngSeconds 'å¦‚æœå•ä½æ˜¯å¤©ä»¥ä¸Šï¼Œé‚£ä¹ˆè¿™é‡Œçš„æ•°ä¸æ˜¯ç‰¹åˆ«å‡†ç¡®ï¼Œå› ä¸ºæœˆä»½æ˜¯æ ¹æ®30å¤©è®¡ç®—
+                dateRemindEnd = DateAdd("s", dblAllSeconds, dateRemindStart)   'å¾—åˆ°å‡†ç¡®çš„ç»“æŸæ—¶é—´
             End If
-'            dateRemindEnd = calcRemindDate() 'ÌáĞÑµÄ½áÊøÊ±¼ä 'Ğ¡ÊıÎŞ·¨¼ÆËã£¬¹ÊÆúÓÃ20200227
+'            dateRemindEnd = calcRemindDate() 'æé†’çš„ç»“æŸæ—¶é—´ 'å°æ•°æ— æ³•è®¡ç®—ï¼Œæ•…å¼ƒç”¨20200227
 
             strNoteCreateDate = v(13)
             shpBG.Visible = True
             picProcessFront.Visible = True
             Combo1.Enabled = True
             Combo2.Enabled = True
-            Timer1.Enabled = True 'Æô¶¯¼ÆÊ±Æ÷
+            Timer1.Enabled = True 'å¯åŠ¨è®¡æ—¶å™¨
         End If
     Else
-        If isFirstNote Then '±íÊ¾ÏµÍ³µ±Ç°Ã»ÓĞÈÎºÎ±ãÇ©£¬Õâ¸ö±ãÇ©ÊÇÏµÍ³×Ô¶¯ĞÂÔöµÄµÚÒ»¸ö£¬ÄÇÃ´¾ÍÒÆ¶¯µ½×óÉÏ½Ç¡£Ò»°ãÊÇÔÚ³ÌĞòµÚÒ»´Î±»ÔËĞĞÊ±¡£»òÕß0±ãÇ©Çé¿öÏÂË«»÷exe
+        If isFirstNote Then 'è¡¨ç¤ºç³»ç»Ÿå½“å‰æ²¡æœ‰ä»»ä½•ä¾¿ç­¾ï¼Œè¿™ä¸ªä¾¿ç­¾æ˜¯ç³»ç»Ÿè‡ªåŠ¨æ–°å¢çš„ç¬¬ä¸€ä¸ªï¼Œé‚£ä¹ˆå°±ç§»åŠ¨åˆ°å·¦ä¸Šè§’ã€‚ä¸€èˆ¬æ˜¯åœ¨ç¨‹åºç¬¬ä¸€æ¬¡è¢«è¿è¡Œæ—¶ã€‚æˆ–è€…0ä¾¿ç­¾æƒ…å†µä¸‹åŒå‡»exe
             isFirstNote = False
             Me.Move (Screen.Width - Me.ScaleWidth) - 200, 180 * 15, NOTE_DEFAULT_WIDTH, NOTE_DEFAULT_HEIGHT
             lngLeftLatest = Me.Left
             lngTopLatest = Me.Top
         Else
-            If Screen.Width - lngLeftLatest - Me.Width < NEW_NOTE_MOVE_RIGHT Or Screen.Height - lngTopLatest - Me.Height < NEW_NOTE_MOVE_DOWN Then 'Èç¹û³¬³öÆÁÄ»Íâ¾ÍËæ»úÉú³ÉÒ»¸ö×ø±ê
+            If Screen.Width - lngLeftLatest - Me.Width < NEW_NOTE_MOVE_RIGHT Or Screen.Height - lngTopLatest - Me.Height < NEW_NOTE_MOVE_DOWN Then 'å¦‚æœè¶…å‡ºå±å¹•å¤–å°±éšæœºç”Ÿæˆä¸€ä¸ªåæ ‡
                 Randomize
                 lngLeftLatest = Screen.Width * 0.5 * Rnd() + Screen.Width * 0.25
                 lngTopLatest = Screen.Height * 0.5 * Rnd() + Screen.Height * 0.25
@@ -716,11 +731,10 @@ Private Sub Form_Load()
         HScroll1.Value = 90
         w.Transparent HScroll1.Value
     End If
-    
     isHasBeenLoaded = True
 End Sub
 Private Sub Form_DblClick()
-    '·ÀÖ¹ÉèÖÃ´°¿ÚÏÔÊ¾²»ÏÂ£¬ËùÒÔ±È½ÏÏÂ£¬Èç¹ûÌ«Ğ¡¾Í³Å¿ª
+    'é˜²æ­¢è®¾ç½®çª—å£æ˜¾ç¤ºä¸ä¸‹ï¼Œæ‰€ä»¥æ¯”è¾ƒä¸‹ï¼Œå¦‚æœå¤ªå°å°±æ’‘å¼€
     orgWidth = Me.Width
     orgHeight = Me.Height
     isNeedRestoreFormSize = False
@@ -759,8 +773,9 @@ Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y A
     lblClose.ForeColor = &H808080
     lblAdd.ForeColor = &H808080
 End Sub
-'ÊÕµ½´°Ìå´óĞ¡Ó°Ïì¶ø¸Ä±äµÄ¿Ø¼ş
+'æ”¶åˆ°çª—ä½“å¤§å°å½±å“è€Œæ”¹å˜çš„æ§ä»¶
 Private Sub setControls(Optional lngWidth, Optional lngHeight)
+
 On Error GoTo Err1
 '    picMain.Move 135, 360, Me.Width - 280, Me.Height - 530
 '    picMain.Move 75, 360, Me.Width - 150, Me.Height - 455
@@ -770,7 +785,7 @@ On Error GoTo Err1
     txtContent.Move 0, 0, picMain.Width, picMain.Height
     lblClose.Move Me.ScaleWidth - lblClose.Width - 135, 0
     
-    If picSet.Visible Then picSet.Move (Me.ScaleWidth - picSet.Width) \ 2, (Me.ScaleHeight - picSet.Height) \ 2 'Èç¹ûÉèÖÃ»¹ÏÔÊ¾×Å£¬ÄÇÃ´Ò²ÒªÏàÓ¦µÄµ÷Õû´óĞ¡
+    If picSet.Visible Then picSet.Move (Me.ScaleWidth - picSet.Width) \ 2, (Me.ScaleHeight - picSet.Height) \ 2 'å¦‚æœè®¾ç½®è¿˜æ˜¾ç¤ºç€ï¼Œé‚£ä¹ˆä¹Ÿè¦ç›¸åº”çš„è°ƒæ•´å¤§å°
 Err1:
 End Sub
 Private Sub Combo1_Click()
@@ -783,9 +798,10 @@ End Sub
 
 Private Sub Combo2_Click()
     Call Check3_Click
+
 End Sub
 Private Sub Check3_Click()
-    If Not isHasBeenLoaded Then Exit Sub '´°ÌåÎ´ÔØÈë³õÊ¼»¯ºÃÔİÊ±²»×öÕâĞ©¶¯×÷
+    If Not isHasBeenLoaded Then Exit Sub 'çª—ä½“æœªè½½å…¥åˆå§‹åŒ–å¥½æš‚æ—¶ä¸åšè¿™äº›åŠ¨ä½œ
     
     Combo1.Enabled = (Check3.Value = 1)
     Combo2.Enabled = Combo1.Enabled
@@ -793,23 +809,23 @@ Private Sub Check3_Click()
     lblShengyu.Visible = Combo1.Enabled
     picProcessFront.Width = shpBG.Width
     picProcessFront.Visible = Combo1.Enabled
-    If Check3.Value = 1 Then 'Ñ¡ÖĞÁË¾Í¸üĞÂ¼ÆÊ±
-        dateRemindStart = Format(Now, "yyyy-mm-dd hh:nn:ss") 'Ö»Òª¸Ä¶¯ÁË¾ÍÒª¸üĞÂ
+    If Check3.Value = 1 Then 'é€‰ä¸­äº†å°±æ›´æ–°è®¡æ—¶
+        dateRemindStart = Format(Now, "yyyy-mm-dd hh:nn:ss") 'åªè¦æ”¹åŠ¨äº†å°±è¦æ›´æ–°
         dblNumber = Combo1.Text
         strDanwei = Combo2.Text
         
-'        dateRemindEnd = calcRemindDate()'Ğ¡ÊıÎŞ·¨¼ÆËã£¬¹ÊÆúÓÃ20200227
+'        dateRemindEnd = calcRemindDate()'å°æ•°æ— æ³•è®¡ç®—ï¼Œæ•…å¼ƒç”¨20200227
         
-        intDanweiIndex = getDanweiIndex(strDanwei)    'µÃµ½µ±Ç°Ê±¼äµ¥Î»Ë÷Òı
-        If intDanweiIndex = 5 And Val(dblNumber) > 60 Then  '´óÓÚ60ÄêµÄÓÃº¯Êı¼ÆËã
+        intDanweiIndex = getDanweiIndex(strDanwei)    'å¾—åˆ°å½“å‰æ—¶é—´å•ä½ç´¢å¼•
+        If intDanweiIndex = 5 And Val(dblNumber) > 60 Then  'å¤§äº60å¹´çš„ç”¨å‡½æ•°è®¡ç®—
             dateRemindEnd = DateAdd(tDanwei(intDanweiIndex).strTag, dblNumber, Now)
             dblAllSeconds = DateDiff("s", dateRemindStart, dateRemindEnd)
         Else
-            dblAllSeconds = Val(dblNumber) * tDanwei(intDanweiIndex).lngSeconds 'Èç¹ûµ¥Î»ÊÇÌìÒÔÉÏ£¬ÄÇÃ´ÕâÀïµÄÊı²»ÊÇÌØ±ğ×¼È·£¬ÒòÎªÔÂ·İÊÇ¸ù¾İ30Ìì¼ÆËã
-            dateRemindEnd = DateAdd("s", dblAllSeconds, Now)  'µÃµ½×¼È·µÄ½áÊøÊ±¼ä
+            dblAllSeconds = Val(dblNumber) * tDanwei(intDanweiIndex).lngSeconds 'å¦‚æœå•ä½æ˜¯å¤©ä»¥ä¸Šï¼Œé‚£ä¹ˆè¿™é‡Œçš„æ•°ä¸æ˜¯ç‰¹åˆ«å‡†ç¡®ï¼Œå› ä¸ºæœˆä»½æ˜¯æ ¹æ®30å¤©è®¡ç®—
+            dateRemindEnd = DateAdd("s", dblAllSeconds, Now)  'å¾—åˆ°å‡†ç¡®çš„ç»“æŸæ—¶é—´
         End If
         
-        If Not isShowEndTime Then printDaojishi "¼ÆËãÖĞ ..."
+        If Not isShowEndTime Then printDaojishi "è®¡ç®—ä¸­ ..."
         Timer1.Enabled = True
     Else
         Timer1.Enabled = False
@@ -817,31 +833,31 @@ Private Sub Check3_Click()
 
     Call saveCurrentSet
 End Sub
-'¸ù¾İÉèÖÃµÄÌáĞÑÊ±¼ä¼ÆËã³öÄ¿±êÌáĞÑÊ±¼ä,s,n,h,ww,d,m,y ÓÉÓÚÎŞ·¨¼ÆËã³öĞ¡ÊıĞÎÊ½£¬¹ÊÆúÓÃ20200227
+'æ ¹æ®è®¾ç½®çš„æé†’æ—¶é—´è®¡ç®—å‡ºç›®æ ‡æé†’æ—¶é—´,s,n,h,ww,d,m,y ç”±äºæ— æ³•è®¡ç®—å‡ºå°æ•°å½¢å¼ï¼Œæ•…å¼ƒç”¨20200227
 Private Function calcRemindDate() As Date
-    If strDanwei = "Ãë" Then
+    If strDanwei = "ç§’" Then
         strInteval = "s"
-    ElseIf strDanwei = "·Ö" Or strDanwei = "·ÖÖÓ" Then
+    ElseIf strDanwei = "åˆ†" Or strDanwei = "åˆ†é’Ÿ" Then
         strInteval = "n"
-    ElseIf strDanwei = "Ê±" Or strDanwei = "Ğ¡Ê±" Then
+    ElseIf strDanwei = "æ—¶" Or strDanwei = "å°æ—¶" Then
         strInteval = "h"
-    ElseIf strDanwei = "ÖÜ" Then
+    ElseIf strDanwei = "å‘¨" Then
         strInteval = "ww"
-    ElseIf strDanwei = "Ìì" Or strDanwei = "ÈÕ" Then
+    ElseIf strDanwei = "å¤©" Or strDanwei = "æ—¥" Then
         strInteval = "d"
-    ElseIf strDanwei = "ÔÂ" Then
+    ElseIf strDanwei = "æœˆ" Then
         strInteval = "m"
-    ElseIf strDanwei = "Äê" Then
+    ElseIf strDanwei = "å¹´" Then
         strInteval = "y"
     End If
     calcRemindDate = DateAdd(strInteval, dblNumber, CDate(dateRemindStart))
 End Function
-'Í¨¹ıtagÀ´´¦ÀíÇĞ»»ÎÊÌâ
-'µã»÷Ê±ºòÈç¹ûtagÊÇshowEndTime£¬ÄÇÃ´¾ÍÉèÖÃÎªµ±Ç°Ê±¼ä£¬Èç¹û²»ÊÇÄÇÃ´¾ÍÏÔÊ¾Îª
+'é€šè¿‡tagæ¥å¤„ç†åˆ‡æ¢é—®é¢˜
+'ç‚¹å‡»æ—¶å€™å¦‚æœtagæ˜¯showEndTimeï¼Œé‚£ä¹ˆå°±è®¾ç½®ä¸ºå½“å‰æ—¶é—´ï¼Œå¦‚æœä¸æ˜¯é‚£ä¹ˆå°±æ˜¾ç¤ºä¸º
 Private Sub lblShengyu_Click()
     isShowEndTime = Not isShowEndTime
     If isShowEndTime Then
-        printDaojishi "½áÊøÊ±¼ä£º" & dateRemindEnd
+        printDaojishi "ç»“æŸæ—¶é—´ï¼š" & dateRemindEnd
     Else
         printDaojishi lblShengyu.Tag
     End If
@@ -877,19 +893,19 @@ End Sub
 Private Sub lblAdd_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     lblAdd.ForeColor = 3256076 ' vbGreen
 End Sub
-'ĞÂ½¨Ò»¸ö±ãÇ©
+'æ–°å»ºä¸€ä¸ªä¾¿ç­¾
 Private Sub lblAdd_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    If Button = 1 Then '±ØĞëÊÇÊó±ê×ó¼üµã»÷²ÅĞÂ½¨±ãÇ©
+    If Button = 1 Then 'å¿…é¡»æ˜¯é¼ æ ‡å·¦é”®ç‚¹å‡»æ‰æ–°å»ºä¾¿ç­¾
         Dim frmNewNote As New frmNote
         Dim isChongdie As Boolean
         Dim frm As Form
         For Each frm In Forms
-            If frm.Left = Me.Left + 320 Then '±íÊ¾ÓĞÖØµş£¬ÄÇÃ´²»ÄÜÓÃµ±Ç°Öµ
+            If frm.Left = Me.Left + 320 Then 'è¡¨ç¤ºæœ‰é‡å ï¼Œé‚£ä¹ˆä¸èƒ½ç”¨å½“å‰å€¼
                 isChongdie = True
                 Exit For
             End If
         Next
-        If Not isChongdie And Screen.Width - Me.Left - NOTE_DEFAULT_HEIGHT >= NEW_NOTE_MOVE_RIGHT And Screen.Height - Me.Top - NOTE_DEFAULT_HEIGHT >= NEW_NOTE_MOVE_DOWN Then  'Èç¹û²»ÖØµş¾ÍÓÃµ±Ç°+´«¹ıÈ¥µÄÖµ£¬ÒÔ±ã´Óµ±Ç°±ãÇ©¿ªÊ¼µş¼Ó
+        If Not isChongdie And Screen.Width - Me.Left - NOTE_DEFAULT_HEIGHT >= NEW_NOTE_MOVE_RIGHT And Screen.Height - Me.Top - NOTE_DEFAULT_HEIGHT >= NEW_NOTE_MOVE_DOWN Then  'å¦‚æœä¸é‡å å°±ç”¨å½“å‰+ä¼ è¿‡å»çš„å€¼ï¼Œä»¥ä¾¿ä»å½“å‰ä¾¿ç­¾å¼€å§‹å åŠ 
             lngLeftLatest = Me.Left
             lngTopLatest = Me.Top
         End If
@@ -898,8 +914,8 @@ Private Sub lblAdd_MouseUp(Button As Integer, Shift As Integer, X As Single, Y A
     End If
 End Sub
 Private Sub lblClose_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    If Button = 1 Then '×ó¼üµãÏÂ²ÅÖ´ĞĞ
-        'ÅĞ¶ÏÍ³¼Æ±ãÇ©´°¿Ú¸öÊı
+    If Button = 1 Then 'å·¦é”®ç‚¹ä¸‹æ‰æ‰§è¡Œ
+        'åˆ¤æ–­ç»Ÿè®¡ä¾¿ç­¾çª—å£ä¸ªæ•°
         Dim frm As Form, lngNoteCount&
         For Each frm In Forms
             If frm.Caption = "WeNote" Then
@@ -909,24 +925,24 @@ Private Sub lblClose_MouseUp(Button As Integer, Shift As Integer, X As Single, Y
         
         Dim w As New clsWindow
         w.hWnd = Me.hWnd
-        If lblClose.Tag = "" Then 'ÓÉÓÚÊÇ¿ÕµÄ£¬Ò²Ã»ÓĞ´´½¨Êı¾İ¼ÇÂ¼£¬ËùÒÔ²»´æÔÚÉ¾³ıµÄÎÊÌâ,Ö±½Ó¼Ó¿ìÍË³ö¼´¿É
+        If lblClose.Tag = "" Then 'ç”±äºæ˜¯ç©ºçš„ï¼Œä¹Ÿæ²¡æœ‰åˆ›å»ºæ•°æ®è®°å½•ï¼Œæ‰€ä»¥ä¸å­˜åœ¨åˆ é™¤çš„é—®é¢˜,ç›´æ¥åŠ å¿«é€€å‡ºå³å¯
             w.FadeOut 40, True
-            If lngNoteCount = 1 Then '±íÊ¾µ±Ç°ÊÇ×îºóÒ»¸ö±ãÇ©£¬ÄÇÃ´ÍË³öËùÓĞ³ÌĞò
+            If lngNoteCount = 1 Then 'è¡¨ç¤ºå½“å‰æ˜¯æœ€åä¸€ä¸ªä¾¿ç­¾ï¼Œé‚£ä¹ˆé€€å‡ºæ‰€æœ‰ç¨‹åº
                 Call frmStartup.mnuExit_Click
             End If
         Else
             Dim isTop As Boolean
             isTop = w.IsTopmost
             If isTop Then w.SetPosNormal
-            If MsgBox("¡¾É¾³ı±ãÇ©¡¿" & vbCrLf & vbCrLf & "ÄúÈ·¶¨ÒªÉ¾³ı´Ë±ãÇ©Âğ£¿É¾³ı½«²»¿É»Ö¸´¡£Èç¹ûÏëÒş²Ø±ãÇ©¿ÉÒÔÓÒ»÷ÓÒÏÂ½ÇÍĞÅÌÍ¼±êÑ¡Ôñ¶ÔÓ¦²Ëµ¥Òş²Ø¡£", vbQuestion + vbYesNo) = vbYes Then
+            If MsgBox("ã€åˆ é™¤ä¾¿ç­¾ã€‘" & vbCrLf & vbCrLf & "æ‚¨ç¡®å®šè¦åˆ é™¤æ­¤ä¾¿ç­¾å—ï¼Ÿåˆ é™¤å°†ä¸å¯æ¢å¤ã€‚å¦‚æœæƒ³éšè—ä¾¿ç­¾å¯ä»¥å³å‡»å³ä¸‹è§’æ‰˜ç›˜å›¾æ ‡é€‰æ‹©å¯¹åº”èœå•éšè—ã€‚", vbQuestion + vbYesNo) = vbYes Then
                 Dim strDataFromFile$
                 strDataFromFile = fileStr(strDataFile)
-                strDataFromFile = regReplace(strDataFromFile & vbCrLf, "^" & lblClose.Tag & vbTab & "[^\r\n]*" & vbCrLf, "") 'É¾³ıµôÊı¾İ
-                writeToFile strDataFile, strDataFromFile 'Ğ´ÈëÊı¾İÎÄ¼ş
+                strDataFromFile = regReplace(strDataFromFile & vbCrLf, "^" & lblClose.Tag & vbTab & "[^\r\n]*" & vbCrLf, "") 'åˆ é™¤æ‰æ•°æ®
+                writeToFile strDataFile, strDataFromFile 'å†™å…¥æ•°æ®æ–‡ä»¶
                 
                 w.FadeOut 30, True
                 
-                If lngNoteCount = 1 Then '±íÊ¾µ±Ç°ÊÇ×îºóÒ»¸ö±ãÇ©£¬ÄÇÃ´ÍË³öËùÓĞ³ÌĞò
+                If lngNoteCount = 1 Then 'è¡¨ç¤ºå½“å‰æ˜¯æœ€åä¸€ä¸ªä¾¿ç­¾ï¼Œé‚£ä¹ˆé€€å‡ºæ‰€æœ‰ç¨‹åº
                     Call frmStartup.mnuExit_Click
                 End If
             End If
@@ -938,7 +954,7 @@ End Sub
 Private Sub lblClose_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     lblClose.ForeColor = vbRed
 End Sub
-'µ÷Õû´°¿Ú´óĞ¡£º×óÏÂ½Ç
+'è°ƒæ•´çª—å£å¤§å°ï¼šå·¦ä¸‹è§’
 Private Sub imgLeftDown_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     isMovingLeftDown = True
     x1LeftDown = X
@@ -946,7 +962,7 @@ Private Sub imgLeftDown_MouseDown(Button As Integer, Shift As Integer, X As Sing
 End Sub
 Private Sub imgLeftDown_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     If isMovingLeftDown = True Then
-        If Me.Width - (X - x1LeftDown) > 1000 Then '¿ØÖÆ´°¿Ú×îĞ¡ÔÚ1000ÄÚ
+        If Me.Width - (X - x1LeftDown) > 1000 Then 'æ§åˆ¶çª—å£æœ€å°åœ¨1000å†…
             Me.Left = Me.Left + X - x1LeftDown
             Me.Width = Me.Width - (X - x1LeftDown)
             
@@ -956,7 +972,7 @@ Private Sub imgLeftDown_MouseMove(Button As Integer, Shift As Integer, X As Sing
             If picSet.Visible Then isNeedRestoreFormSize = False
         End If
         
-        If imgLeftDown.Top + Y - y1LeftDown + imgLeftDown.Height > 1000 Then  '¿ØÖÆ´°¿Ú×îĞ¡ÔÚ1000ÄÚ
+        If imgLeftDown.Top + Y - y1LeftDown + imgLeftDown.Height > 1000 Then  'æ§åˆ¶çª—å£æœ€å°åœ¨1000å†…
             imgLeftDown.Top = imgLeftDown.Top + Y - y1LeftDown
             imgRightDown.Top = imgLeftDown.Top
             Me.Height = imgLeftDown.Top + imgLeftDown.Height
@@ -970,7 +986,7 @@ End Sub
 Private Sub imgLeftDown_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     isMovingLeftDown = False
 End Sub
-'µ÷Õû´°¿Ú´óĞ¡£ºÓÒÏÂ½Ç
+'è°ƒæ•´çª—å£å¤§å°ï¼šå³ä¸‹è§’
 Private Sub imgRightDown_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     isMovingRightDown = True
     x1RightDown = X
@@ -978,7 +994,7 @@ Private Sub imgRightDown_MouseDown(Button As Integer, Shift As Integer, X As Sin
 End Sub
 Private Sub imgRightDown_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     If isMovingRightDown = True Then
-        If imgRightDown.Left + X - x1RightDown + imgRightDown.Width > 1000 Then '¿ØÖÆ´°¿Ú×îĞ¡ÔÚ1000ÄÚ
+        If imgRightDown.Left + X - x1RightDown + imgRightDown.Width > 1000 Then 'æ§åˆ¶çª—å£æœ€å°åœ¨1000å†…
             imgRightDown.Left = imgRightDown.Left + X - x1RightDown
             Me.Width = imgRightDown.Left + imgRightDown.Width
             Call setControls
@@ -986,7 +1002,7 @@ Private Sub imgRightDown_MouseMove(Button As Integer, Shift As Integer, X As Sin
             If picSet.Visible Then isNeedRestoreFormSize = False
         End If
         
-        If imgRightDown.Top + Y - y1RightDown + imgRightDown.Height > 1000 Then  '¿ØÖÆ´°¿Ú×îĞ¡ÔÚ1000ÄÚ
+        If imgRightDown.Top + Y - y1RightDown + imgRightDown.Height > 1000 Then  'æ§åˆ¶çª—å£æœ€å°åœ¨1000å†…
             imgRightDown.Top = imgRightDown.Top + Y - y1RightDown
             imgLeftDown.Top = imgRightDown.Top
             Me.Height = imgRightDown.Top + imgRightDown.Height
@@ -1002,7 +1018,7 @@ End Sub
 
 Private Sub Check1_Click()
     If isNeedSetToDesktop Then
-        MsgBox "µ±Ç°ÎªÇ¶Èë×ÀÃæÄ£Ê½£¬ÎŞ·¨ÉèÖÃ´°¿ÚÖÃ¶¥¡£Èç¹ûĞèÒªÈ¡ÏûÇ¶Èë×ÀÃæÇëµã»÷ÓÒÏÂ½ÇÍ¼±êÈ¡Ïû¹´Ñ¡¡£", vbInformation
+        MsgBox "å½“å‰ä¸ºåµŒå…¥æ¡Œé¢æ¨¡å¼ï¼Œæ— æ³•è®¾ç½®çª—å£ç½®é¡¶ã€‚å¦‚æœéœ€è¦å–æ¶ˆåµŒå…¥æ¡Œé¢è¯·ç‚¹å‡»å³ä¸‹è§’å›¾æ ‡å–æ¶ˆå‹¾é€‰ã€‚", vbInformation
         Exit Sub
     End If
     
@@ -1022,10 +1038,10 @@ End Sub
 Private Sub HScroll1_Scroll()
     Call HScroll1_Change
 End Sub
-'±£´æµ±Ç°ÉèÖÃĞÅÏ¢
-'id  ×ó  ÉÏ  ¿í  ¸ß  Êı¾İ    Í¸Ã÷¶È  ÖÃ¶¥    ÒªÌáĞÑ  ÌáĞÑÊı  µ¥Î»    ÌáĞÑÉèÖÃÊ±¼ä        ´´½¨Ê±¼ä
+'ä¿å­˜å½“å‰è®¾ç½®ä¿¡æ¯
+'id  å·¦  ä¸Š  å®½  é«˜  æ•°æ®    é€æ˜åº¦  ç½®é¡¶    è¦æé†’  æé†’æ•°  å•ä½    æé†’è®¾ç½®æ—¶é—´        åˆ›å»ºæ—¶é—´
 Private Sub saveCurrentSet()
-    If Not isHasBeenLoaded Then Exit Sub '´°ÌåÎ´ÔØÈë³õÊ¼»¯ºÃ¾Í²»Ö´ĞĞ±£´æ
+    If Not isHasBeenLoaded Then Exit Sub 'çª—ä½“æœªè½½å…¥åˆå§‹åŒ–å¥½å°±ä¸æ‰§è¡Œä¿å­˜
     
     Dim strData$, strDataFromFile$
     If lblClose.Tag = "" Then
@@ -1036,15 +1052,15 @@ Private Sub saveCurrentSet()
                 Replace(txtContent.Text, vbCrLf, "vbcrlf") & vbTab & _
                 HScroll1.Value & vbTab & _
                 Me.BackColor & vbTab & _
-                IIf(Check1.Value = 1, "ÊÇ", "·ñ") & vbTab & _
-                IIf(Check3.Value = 1, "ÊÇ", "·ñ") & vbTab & Combo1.Text & vbTab & Combo2.Text & vbTab & dateRemindStart & vbTab & strNoteCreateDate
+                IIf(Check1.Value = 1, "æ˜¯", "å¦") & vbTab & _
+                IIf(Check3.Value = 1, "æ˜¯", "å¦") & vbTab & Combo1.Text & vbTab & Combo2.Text & vbTab & dateRemindStart & vbTab & strNoteCreateDate
     strDataFromFile = fileStr(strDataFile)
     If regTest(strDataFromFile, "^" & lblClose.Tag & vbTab & "[^\r\n]*") Then
         strDataFromFile = regReplace(strDataFromFile, "^" & lblClose.Tag & vbTab & "[^\r\n]*", strData)
-    Else 'Êı¾İÎÄ¼şÖĞ²»´æÔÚ£¬ËµÃ÷ÉĞÎ´±£´æ¹ı
+    Else 'æ•°æ®æ–‡ä»¶ä¸­ä¸å­˜åœ¨ï¼Œè¯´æ˜å°šæœªä¿å­˜è¿‡
         strDataFromFile = strDataFromFile & vbCrLf & strData
     End If
-    writeToFile strDataFile, strDataFromFile 'Ğ´ÈëÊı¾İÎÄ¼ş
+    writeToFile strDataFile, strDataFromFile 'å†™å…¥æ•°æ®æ–‡ä»¶
 End Sub
 
 Private Sub lblSetClose_Click()
@@ -1065,21 +1081,21 @@ Private Sub Timer1_Timer()
         Timer1.Enabled = False
         isRemind = False
         Check3.Value = 0
-        Call saveCurrentSet '±£´æµ½Êı¾İÎÄ¼ş
+        Call saveCurrentSet 'ä¿å­˜åˆ°æ•°æ®æ–‡ä»¶
 
         Dim w As New clsWindow
         w.hWnd = Me.hWnd
         w.Focus
         w.Shake
-        MsgBox "ÄúÓÚ" & dateRemindStart & "ÉèÖÃµÄ¡°" & dblNumber & strDanwei & "¡±ÌáĞÑÊ±¼äÒÑµ½£¡ÌáĞÑÄÚÈİ£º" & vbCrLf & vbCrLf & txtContent.Text & vbCrLf & vbCrLf & "µ±Ç°Ê±¼ä£º" & Now, vbInformation
+        MsgBox "æ‚¨äº" & dateRemindStart & "è®¾ç½®çš„â€œ" & dblNumber & strDanwei & "â€æé†’æ—¶é—´å·²åˆ°ï¼æé†’å†…å®¹ï¼š" & vbCrLf & vbCrLf & txtContent.Text & vbCrLf & vbCrLf & "å½“å‰æ—¶é—´ï¼š" & Now, vbInformation
     Else
         Dim strTip As String, strDaojishi$
         Dim dblLeave As Double
         Dim dblWidth As Double
-        dblLeave = DateDiff("s", Now, dateRemindEnd)  'Ê£ÓàµÄÊ±¼ä£¬Ä¬ÈÏÎªÉèÖÃµÄµ¥Î» s,n,h,ww,d,m,y
-        dblWidth = Int(dblLeave / dblAllSeconds * shpBG.Width) '½ø¶ÈÌõµÄ¿í¶È
+        dblLeave = DateDiff("s", Now, dateRemindEnd)  'å‰©ä½™çš„æ—¶é—´ï¼Œé»˜è®¤ä¸ºè®¾ç½®çš„å•ä½ s,n,h,ww,d,m,y
+        dblWidth = Int(dblLeave / dblAllSeconds * shpBG.Width) 'è¿›åº¦æ¡çš„å®½åº¦
         strDaojishi = transSecondsToAll(DateDiff("s", Now, dateRemindEnd))
-        If strDaojishi <> "" Then strTip = "Ê£Óà£º" & strDaojishi
+        If strDaojishi <> "" Then strTip = "å‰©ä½™ï¼š" & strDaojishi
         If strTip <> lblShengyu.Tag Then
             lblShengyu.Tag = strTip
             If Not isShowEndTime Then printDaojishi strTip
@@ -1089,7 +1105,11 @@ Private Sub Timer1_Timer()
         End If
     End If
 End Sub
-'½«ÃëÊı×ª»»³ÉÄêÔÂÈÕµÈÊ±¼ä
+Private Sub Timer2_Timer()
+    guoqi.Tag = "è¿‡æœŸæ—¶é—´ï¼š" & Now - 30
+    printGuoqi guoqi.Tag
+End Sub
+'å°†ç§’æ•°è½¬æ¢æˆå¹´æœˆæ—¥ç­‰æ—¶é—´
 Private Function transSecondsToAll(ByVal dblSeconds As Double) As String
     Dim s$, i%, strTime$, dblCountCurrent As Double
     dblCountCurrent = Fix(dblSeconds / tDanwei(intDanweiIndex).lngSeconds)
@@ -1113,8 +1133,12 @@ Private Sub txtContent_Click()
         Call lblSetClose_Click
     End If
 End Sub
-'´òÓ¡µ¹¼ÆÊ±
+'æ‰“å°å€’è®¡æ—¶
 Private Sub printDaojishi(ByVal strMsg As String)
     lblShengyu.Cls
     lblShengyu.Print strMsg
+End Sub
+Private Sub printGuoqi(ByVal strMsg As String)
+    guoqi.Cls
+    guoqi.Print strMsg
 End Sub
